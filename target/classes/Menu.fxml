@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="533.0" prefWidth="391.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <VBox fx:id="vbox" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+         <children>
+            <MenuBar fx:id="menuBar" disable="true" VBox.vgrow="ALWAYS">
+              <menus>
+                <Menu mnemonicParsing="false" text="Management">
+                  <items>
+                    <MenuItem fx:id="menuAddUser" disable="true" mnemonicParsing="false" onAction="#goToUserManagement" text="Users Management" />
+                        <MenuItem fx:id="menuSamples" disable="true" mnemonicParsing="false" onAction="#goToSamplesManagement" text="Saples Management" />
+                        <MenuItem fx:id="menuAnalyses" disable="true" mnemonicParsing="false" onAction="#goToAnalysesManagement" text="Analyses Management" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Statistics">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#goToStatistics" text="View Statistics" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="About">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#showAbout" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox VBox.vgrow="ALWAYS">
+               <children>
+                  <TextField fx:id="txtUserName" promptText="User Name">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></TextField>
+                  <PasswordField fx:id="txtPassword" onAction="#logIn" promptText="password" />
+                  <Button fx:id="btnLogIn" mnemonicParsing="false" onAction="#logIn" text="Login" />
+                  <Button fx:id="btnLogOut" layoutX="308.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOut" text="LogOut" visible="false" />
+               </children>
+            </HBox>
+            <ImageView fitHeight="365.0" fitWidth="498.0" pickOnBounds="true" VBox.vgrow="ALWAYS">
+               <image>
+                  <Image url="@image2.jpg" />
+               </image>
+               <viewport>
+                  <Rectangle2D minX="485.0" minY="365.0" />
+               </viewport>
+            </ImageView>
+            <Button fx:id="btnRegisterPacients" disable="true" mnemonicParsing="false" onAction="#goToPacientsManagement" prefHeight="25.0" prefWidth="498.0" text="Register Patients" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEnterResults" disable="true" layoutX="10.0" layoutY="235.0" mnemonicParsing="false" onAction="#goToResults" prefHeight="25.0" prefWidth="498.0" text="Enter Results" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEnterDiagnostic" disable="true" layoutX="10.0" layoutY="280.0" mnemonicParsing="false" onAction="#goToDiagnostic" prefHeight="25.0" prefWidth="498.0" text="Enter Diagnostic" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSearchPatients" disable="true" layoutX="10.0" layoutY="325.0" mnemonicParsing="false" onAction="#goToSearchPatients" prefHeight="45.0" prefWidth="498.0" text="Search Patients" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Button>
+            <Label text="Program made by Hrenean Alin-Emilian">
+               <font>
+                  <Font name="Forte" size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</GridPane>

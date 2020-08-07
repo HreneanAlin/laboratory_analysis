@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="555.0" prefWidth="907.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.GraphicAnalysesManagement">
+    <children>
+        <VBox GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <children>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+              <items>
+                  <TextField fx:id="txtIncreasePrices" promptText="Increase all prices" />
+                <Button mnemonicParsing="false" onAction="#increasePrices" text="Increase" />
+                  <TextField fx:id="txtDecreasePrices" promptText="Decrease all prices" />
+                  <Button mnemonicParsing="false" onAction="#decreasePrices" text="Decrease" />
+              </items>
+            </ToolBar>
+                <TableView fx:id="analysesTable" onMouseClicked="#showSelected" VBox.vgrow="ALWAYS">
+
+                    <columns>
+                        <TableColumn fx:id="colId" text="Id">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="id" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colName" prefWidth="111.0" text="Name">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="name" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colprice" prefWidth="95.0" text="Price">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="price" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colLowLimit" prefWidth="121.0" text="Low Limit">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="lowLimit" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colHighLimit" prefWidth="75.0" text="High Limit">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="highLimit" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colSample" prefWidth="75.0" text="Sample">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="sample" />
+                            </cellValueFactory>
+                        </TableColumn>
+                  <TableColumn fx:id="colUser" prefWidth="75.0" text="Added By">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="userThatAdded" />
+                     </cellValueFactory>
+                  </TableColumn>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <TextField fx:id="txtName" promptText="Analyses Name" VBox.vgrow="ALWAYS" />
+                <TextField fx:id="txtPrice" promptText="Price" VBox.vgrow="ALWAYS" />
+                <TextField fx:id="txtLowLimit" promptText="Low Limit" VBox.vgrow="ALWAYS" />
+            <TextField fx:id="txtHighLimit" layoutX="10.0" layoutY="460.0" promptText="High Limit" />
+                <HBox VBox.vgrow="ALWAYS">
+               <children>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <ComboBox fx:id="comboBoxSample" prefWidth="150.0" promptText="Sample" />
+               </children></HBox>
+                <HBox VBox.vgrow="ALWAYS">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#addEntity" text="Add Analysis" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteEntity" text="Delete Analysis">
+                            <HBox.margin>
+                                <Insets left="8.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button layoutX="92.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateEntity" text="Update Analysis">
+                            <HBox.margin>
+                                <Insets left="8.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+                <Region VBox.vgrow="ALWAYS" />
+                <Button mnemonicParsing="false" onAction="#refresh" text="Refresh" VBox.vgrow="ALWAYS">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" />
+                    </VBox.margin>
+                </Button>
+            </children></VBox>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>

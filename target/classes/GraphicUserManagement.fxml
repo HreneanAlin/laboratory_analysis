@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.GraphicUserManagement">
+    <children>
+        <VBox GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <children>
+                <TableView fx:id="userTable" onMouseClicked="#showSelected" VBox.vgrow="ALWAYS">
+
+                    <columns>
+                        <TableColumn fx:id="colId" text="Id">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="id" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colName" prefWidth="111.0" text="UserName">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="name" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colpassword" prefWidth="138.0" text="Password">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="password" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="coljob" prefWidth="75.0" text="Job Title">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="jobTitle" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colRegister" prefWidth="75.0" text="register">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="acceptToRegisterString" />
+                            </cellValueFactory>
+                        </TableColumn>
+                  <TableColumn fx:id="colValidate" prefWidth="75.0" text="validate">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="acceptToValidateString" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colAdmin" prefWidth="75.0" text="admin">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="adminString" />
+                     </cellValueFactory>
+                  </TableColumn>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <TextField fx:id="txtUserName" promptText="User Name" VBox.vgrow="ALWAYS" />
+                <TextField fx:id="txtPassword" promptText="password" VBox.vgrow="ALWAYS" />
+                <TextField fx:id="txtJobTitle" promptText="Job Title" VBox.vgrow="ALWAYS" />
+            <HBox VBox.vgrow="ALWAYS">
+               <children>
+                      <CheckBox fx:id="checkRegister" mnemonicParsing="false" text="register">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" />
+                     </HBox.margin></CheckBox>
+                  <CheckBox fx:id="checkValidate" layoutX="20.0" layoutY="10.0" mnemonicParsing="false" text="validate">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="checkIsAdmin" layoutX="92.0" layoutY="10.0" mnemonicParsing="false" text="admin">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" />
+                     </HBox.margin>
+                  </CheckBox>
+               </children></HBox>
+                <HBox VBox.vgrow="ALWAYS">
+                    <children>
+                        <Button fx:id="btnAddUser" mnemonicParsing="false" onAction="#addEntity" text="Add User" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteEntity" text="Delete User">
+                            <HBox.margin>
+                                <Insets left="8.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button layoutX="92.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateEntity" text="Update User">
+                            <HBox.margin>
+                                <Insets left="8.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+                <Region VBox.vgrow="ALWAYS" />
+                <Button mnemonicParsing="false" onAction="#refresh" text="Refresh" VBox.vgrow="ALWAYS">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" />
+                    </VBox.margin>
+                </Button>
+            </children></VBox>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>

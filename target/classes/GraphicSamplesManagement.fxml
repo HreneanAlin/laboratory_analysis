@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.GraphicSamplesManagement">
+    <children>
+        <VBox GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <children>
+                <TableView fx:id="samplesTable" onMouseClicked="#showSelected" VBox.vgrow="ALWAYS">
+
+                    <columns>
+                        <TableColumn fx:id="colId" text="Id">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="id" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colName" prefWidth="111.0" text="Name">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="name" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colAssistance" prefWidth="138.0" text="requires assistance">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="assitantRequiredString" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colUser" prefWidth="75.0" text="Added By">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="userThatAdded" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <TextField fx:id="txtSampleName" promptText="Sample Name" VBox.vgrow="ALWAYS" />
+                <HBox VBox.vgrow="ALWAYS">
+                    <children>
+                        <CheckBox fx:id="checkAssistance" mnemonicParsing="false" text="requires assistance">
+                            <HBox.margin>
+                                <Insets bottom="10.0" left="10.0" top="10.0" />
+                            </HBox.margin></CheckBox>
+                    </children></HBox>
+                <HBox VBox.vgrow="ALWAYS">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#addEntity" text="Add Sample" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteEntity" text="Delete Sample">
+                            <HBox.margin>
+                                <Insets left="8.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button layoutX="92.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateEntity" text="Update Sample">
+                            <HBox.margin>
+                                <Insets left="8.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+                <Region VBox.vgrow="ALWAYS" />
+                <Button mnemonicParsing="false" onAction="#refresh" text="Refresh" VBox.vgrow="ALWAYS">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" />
+                    </VBox.margin>
+                </Button>
+            </children></VBox>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>

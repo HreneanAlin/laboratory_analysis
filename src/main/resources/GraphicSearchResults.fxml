@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="523.0" prefWidth="696.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.GraphicSearchResults">
+   <children>
+      <VBox GridPane.vgrow="ALWAYS">
+         <children>
+            <BorderPane prefHeight="476.0" prefWidth="798.0" VBox.vgrow="ALWAYS">
+               <left>
+                  <VBox BorderPane.alignment="CENTER">
+                     <children>
+                        <TextField fx:id="txtId" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="127.0" promptText="ID">
+                           <VBox.margin>
+                              <Insets left="5.0" right="10.0" top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="txtCnp" prefHeight="25.0" prefWidth="127.0" promptText="CNP" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="txtFistName" layoutX="10.0" layoutY="10.0" promptText="First Name">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="txtLastName" layoutX="10.0" layoutY="35.0" promptText="Last Name">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </left>
+               <top>
+                  <HBox prefWidth="582.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <DatePicker fx:id="datePickerStart" promptText="Start Date">
+                           <HBox.margin>
+                              <Insets left="5.0" right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </DatePicker>
+                        <DatePicker fx:id="datePickerStop" promptText="Stop Date">
+                           <HBox.margin>
+                              <Insets bottom="10.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </DatePicker>
+                        <Button mnemonicParsing="false" onAction="#search" text="Search">
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </top>
+               <center>
+                  <TableView fx:id="patientTable" BorderPane.alignment="CENTER">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="ID">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="id" />
+                           </cellValueFactory>
+                        </TableColumn>
+                      <TableColumn prefWidth="75.0" text="CNP">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="cnp" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn fx:id="colFirstName" prefWidth="75.0" text="First Name">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="firstName" />
+                          </cellValueFactory>
+                      </TableColumn>
+                        <TableColumn fx:id="colLastName" prefWidth="75.0" text="Last Name">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="lastName" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn minWidth="-1.0" prefWidth="-1.0" text="Date">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="currentDate" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </center>
+               <right>
+                  <VBox BorderPane.alignment="CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#goToResult" prefHeight="25.0" prefWidth="95.0" text="View Result">
+                           <VBox.margin>
+                              <Insets left="10.0" right="5.0" top="2.0" />
+                           </VBox.margin></Button>
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#exportToPdf" prefHeight="25.0" prefWidth="95.0" text="Export as PDF">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button layoutX="20.0" layoutY="47.0" mnemonicParsing="false" onAction="#exportToWeb" prefHeight="25.0" prefWidth="95.0" text="Export to WEB">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children></VBox>
+               </right>
+            </BorderPane>
+         </children>
+      </VBox>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

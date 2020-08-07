@@ -1,0 +1,5 @@
+{"name":"Alin","password":"Hrenean","jobTitle":"director","acceptToRegister":true,"acceptToRegisterString":"true","acceptToValidate":true,"acceptToValidateString":"true","admin":true,"adminString":"true","id":1}
+{"name":"Ionut","password":"Ionut","jobTitle":"registrator","acceptToRegister":true,"acceptToRegisterString":"true","acceptToValidate":false,"acceptToValidateString":"false","admin":false,"adminString":"false","id":2}
+{"name":"Zele","password":"Zeleee","jobTitle":"medic","acceptToRegister":true,"acceptToRegisterString":"true","acceptToValidate":true,"acceptToValidateString":"true","admin":true,"adminString":"true","id":3}
+{"name":"Mihai","password":"Mihai","jobTitle":"Biochimist","acceptToRegister":true,"acceptToRegisterString":"true","acceptToValidate":true,"acceptToValidateString":"true","admin":false,"adminString":"false","id":4}
+{"name":"Catalin","password":"Catalin","jobTitle":"medic","acceptToRegister":true,"acceptToRegisterString":"true","acceptToValidate":true,"acceptToValidateString":"true","admin":false,"adminString":"false","id":6}
